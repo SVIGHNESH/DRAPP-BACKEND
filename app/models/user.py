@@ -13,6 +13,7 @@ class User(Base):
     email: Mapped[str] = mapped_column(String(255), unique=True, index=True)
     oauth_provider: Mapped[str | None] = mapped_column(String(50))
     oauth_id: Mapped[str | None] = mapped_column(String(255))
+    password_hash: Mapped[str | None] = mapped_column(String(255))
     role: Mapped[str] = mapped_column(String(20), default="user")
     created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
 
