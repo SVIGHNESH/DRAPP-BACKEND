@@ -50,18 +50,6 @@ requested → confirmed → in_progress → completed
 
 ---
 
-## 3. New Feature: Address Support
-
-The original design had no concept of a delivery address. This backend adds first-class address support:
-
-- A user can save **multiple named addresses** on their profile (e.g. "Home", "Mom's place").
-- One address can be marked as the **default**.
-- When creating a booking the user supplies **exactly one** of:
-  - `address_id` — refers to a previously saved address.
-  - `custom_address` — a free-text one-off address not saved to the profile.
-- The Pydantic schema enforces this constraint at the API layer (providing both, or neither, returns a `422` validation error).
-
----
 
 ## 4. Tech Stack
 
